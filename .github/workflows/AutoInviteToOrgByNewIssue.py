@@ -14,16 +14,16 @@ COMMUNITY_TEAM_ID = os.environ['COMMUNITY_TEAM_ID']
 file = open(os.environ['GITHUB_EVENT_PATH'])
 data = json.load(file)
 
-print("Data:")
-print(data)
+# print("Data:")
+# print(data)
 
 COMMENT = data["issue"]["title"]
 USERNAME = data["issue"]["user"]["login"]
 
-print("COMMENT:")
-print(COMMENT)
-print("USERNAME:")
-print(USERNAME)
+# print("COMMENT:")
+# print(COMMENT)
+# print("USERNAME:")
+# print(USERNAME)
 
 if "RaiseHigh @" not in COMMENT and "RaiseHigh me" not in COMMENT:
   sys.exit()
