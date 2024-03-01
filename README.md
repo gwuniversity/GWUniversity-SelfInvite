@@ -9,7 +9,7 @@ To use this service, you must be invited to the 'GWUniversity' github organizati
   ![Repository Issues](RepoTitle.png)
 - Create a New Issue
   ![New Issue Dialog](NewIssueDialog.png)
-- The ISSUE MUST BE Titled: RaiseHigh @githubusername OR RaiseHigh me
+- The ISSUE TITLE MUST INCLUDE THE PHRASE "RaiseHigh"
 - Submit the issue
   ![Submit Issue](SubmitIssue.png)
   
