@@ -25,7 +25,7 @@ USERNAME = data["issue"]["user"]["login"] # assumes this value is always present
 # print("USERNAME:")
 # print(USERNAME)
 
-if "RaiseHigh" not in COMMENT:
+if "RAISEHIGH" not in COMMENT.upper():
   sys.exit()
 else:
 
