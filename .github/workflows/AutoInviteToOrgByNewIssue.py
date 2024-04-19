@@ -18,19 +18,16 @@ data = json.load(file)
 # print(data)
 
 COMMENT = data["issue"]["title"]
-USERNAME = data["issue"]["user"]["login"]
+USERNAME = data["issue"]["user"]["login"] # assumes this value is always present
 
 # print("COMMENT:")
 # print(COMMENT)
 # print("USERNAME:")
 # print(USERNAME)
 
-if "RaiseHigh @" not in COMMENT and "RaiseHigh me" not in COMMENT:
+if "RAISEHIGH" not in COMMENT.upper():
   sys.exit()
 else:
-
-  if "RaiseHigh @" in COMMENT:
-    USERNAME = COMMENT.replace("RaiseHigh @", "")
 
   print('Send invite for the @'+USERNAME)
 
