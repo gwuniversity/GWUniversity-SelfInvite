@@ -13,6 +13,7 @@ To use this service, you must be invited to the 'GWUniversity' github organizati
 - Submit the issue
   ![Submit Issue](SubmitIssue.png)
   
+- After submitting your Issue, you'll recive an email to your GitHub registered email address with an invitation (Note: may or may not be a GW email).  
 - Once the invitation is received and accepted, please return to the repo and close the issue.
 
 ##### [Notice:] 
