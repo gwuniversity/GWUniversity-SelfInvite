@@ -13,8 +13,12 @@ To use this service, you must be invited to the 'GWUniversity' github organizati
 - Submit the issue
   ![Submit Issue](SubmitIssue.png)
   
-- After submitting your Issue, you'll recive an email to your GitHub registered email address with an invitation (Note: may or may not be a GW email).  
+- After submitting your Issue, you'll recive an email to your GitHub registered email address with an invitation (Note: may or may not be a GW email).
 - Once the invitation is received and accepted, please return to the repo and close the issue.
+
+**If you do not receive the invitation email, please submit a ticket with GWIT:**
+- https://it.gwu.edu/support
+- please include your github username and issue number in the ticket
 
 ##### [Notice:] 
 The code and actions used in this repository are modified from the original project by Max Base. 
