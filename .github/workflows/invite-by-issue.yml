@@ -19,8 +19,19 @@ jobs:
             pip install requests
             if [ -f ./.github/workflows/requirements.txt ]; then pip install -r ./.github/workflows/requirements.txt; fi
         - name: execute py script
+          id: run_script
           run: |
-            python ./.github/workflows/AutoInviteToOrgByNewIssue.py
+            # Capture Python script output in a variable and grep for "pending" or "active" state
+            OUTPUT=$(python ./.github/workflows/AutoInviteToOrgByNewIssue.py)
+            
+            # Only proceed to grep if the output is non-empty
+            if [ -n "$OUTPUT" ]; then
+              echo "$OUTPUT" | grep -E '"?state"?[:=]"?(pending|active)"?'
+            else
+              echo "'RaiseHigh' was not found in the issue title "
+            fi                     
           env:
             MY_GITHUB_KEY: ${{ secrets.MY_GITHUB_KEY }}
             COMMUNITY_TEAM_ID: ${{ secrets.COMMUNITY_TEAM_ID }}
+
+
