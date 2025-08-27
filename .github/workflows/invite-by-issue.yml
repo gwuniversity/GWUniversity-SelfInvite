@@ -23,7 +23,11 @@ jobs:
           run: |
             # Capture Python script output in a variable and grep for "pending" or "active" state
             OUTPUT=$(python ./.github/workflows/AutoInviteToOrgByNewIssue.py)
-            echo "$OUTPUT" | grep -E '"?state"?[:=]"?(pending|active)"?'
+            
+            # Only proceed to grep if the output is non-empty
+            if [ -n "$OUTPUT" ]; then
+              echo "$OUTPUT" | grep -E '"?state"?[:=]"?(pending|active)"?'
+            fi                        
           env:
             MY_GITHUB_KEY: ${{ secrets.MY_GITHUB_KEY }}
             COMMUNITY_TEAM_ID: ${{ secrets.COMMUNITY_TEAM_ID }}
