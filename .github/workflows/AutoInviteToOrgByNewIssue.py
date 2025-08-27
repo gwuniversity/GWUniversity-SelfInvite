@@ -26,7 +26,6 @@ USERNAME = data["issue"]["user"]["login"] # assumes this value is always present
 # print(USERNAME)
 
 if "RAISEHIGH" not in COMMENT.upper():
-  print ("Required data not found in issue title")
   sys.exit()
 else:
 

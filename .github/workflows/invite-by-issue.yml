@@ -27,7 +27,9 @@ jobs:
             # Only proceed to grep if the output is non-empty
             if [ -n "$OUTPUT" ]; then
               echo "$OUTPUT" | grep -E '"?state"?[:=]"?(pending|active)"?'
-            fi                        
+            else
+              echo "'RaiseHigh' was not found in the issue title "
+            fi                     
           env:
             MY_GITHUB_KEY: ${{ secrets.MY_GITHUB_KEY }}
             COMMUNITY_TEAM_ID: ${{ secrets.COMMUNITY_TEAM_ID }}
