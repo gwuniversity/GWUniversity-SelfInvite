@@ -25,9 +25,10 @@ jobs:
         run: |
           LAST_COMMIT_EPOCH=$(git log -1 --format=%ct)
           CURRENT_EPOCH=$(date +%s)
-          DAYS_OLD=$(( (CURRENT_EPOCH - LAST_COMMIT_EPOCH) / 86400 ))
+          SECONDS_OLD=$(( CURRENT_EPOCH - LAST_COMMIT_EPOCH ))
+          #DAYS_OLD=$(( (CURRENT_EPOCH - LAST_COMMIT_EPOCH) / 86400 ))
 
-          if [ $DAYS_OLD -gt 45 ]; then
+          if [ $SECONDS_OLD -gt 45 ]; then
             git config --local user.email "action@github.com"
             git config --local user.name "GitHub Action"
             
