@@ -5,6 +5,7 @@ on:
     - cron: '30 5 * * *'
 
 permissions:
+  actions: write
   issues: write
 
 jobs:
