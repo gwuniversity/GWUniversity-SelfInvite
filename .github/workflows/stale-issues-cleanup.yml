@@ -18,7 +18,7 @@ jobs:
           days-before-stale: 14
           days-before-close: 5
       
-      - checkout: Checkout 
+      - name: Checkout 
         uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 #v6
 
       - name: Commit and push if last commit > 45 days
