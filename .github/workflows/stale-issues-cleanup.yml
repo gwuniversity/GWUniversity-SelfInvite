@@ -16,3 +16,12 @@ jobs:
           stale-issue-message: 'This issue is stale because it has been open 14 days with no activity. Remove stale label or comment or this will be closed in 5 days.'
           days-before-stale: 14
           days-before-close: 5
+
+      - name: Commit
+        run: |
+            touch .test
+            git config --local user.email "action@github.com"
+            git config --local user.name "GitHub Action"
+            git add .
+            git commit -m "Automated stage0 upload: $Date"
+            git push
