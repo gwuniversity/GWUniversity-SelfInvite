@@ -5,6 +5,7 @@ on:
     - cron: '30 5 * * *'
 
 permissions:
+  contents: write
   actions: write
   issues: write
 
@@ -25,16 +26,16 @@ jobs:
         run: |
           LAST_COMMIT_EPOCH=$(git log -1 --format=%ct)
           CURRENT_EPOCH=$(date +%s)
-          SECONDS_OLD=$(( CURRENT_EPOCH - LAST_COMMIT_EPOCH ))
-          #DAYS_OLD=$(( (CURRENT_EPOCH - LAST_COMMIT_EPOCH) / 86400 ))
+          DAYS_OLD=$(( (CURRENT_EPOCH - LAST_COMMIT_EPOCH) / 86400 ))
 
-          if [ $SECONDS_OLD -gt 45 ]; then
+          if [ $DAYS_OLD -gt 45 ]; then
             git config --local user.email "action@github.com"
             git config --local user.name "GitHub Action"
             
             # Make your file changes here
             
             git add .
-            git commit -m "Automated commit: $(date +'%m%d%y')"
+            git commit --allow-empty -m "Automated commit: $(date +'%m%d%y')"
             git push
           fi
+
